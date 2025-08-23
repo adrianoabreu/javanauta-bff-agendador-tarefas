@@ -10,8 +10,10 @@ import com.javanauta.bffagendadortarefas.business.dto.out.EnderecoDTOResponse;
 import com.javanauta.bffagendadortarefas.business.dto.out.TelefoneDTOResponse;
 import com.javanauta.bffagendadortarefas.business.dto.out.UsuarioDTOResponse;
 import com.javanauta.bffagendadortarefas.business.dto.out.ViaCepDTOResponse;
+import com.javanauta.bffagendadortarefas.infrastructure.security.SecurityConfig;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,11 +23,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
 @Tag(name = "Usuário", description = "Cadastro e login de usuários")
+@SecurityRequirement(name = SecurityConfig.SECURITY_SCHEME)
+//@CrossOrigin(origins = {"http://localhost:3000"}) Esta linha representa configuração do CORS em uma classe específica.
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
     @PostMapping
+//  @CrossOrigin(origins = {"http://localhost:3000"}) Esta linha representa configuração do CORS em um metodo especifico.
     @Operation(summary = "Salvar Usuários", description = "Cria um novo usuário")
     @ApiResponse(responseCode = "200", description = "Usuário salvo com sucesso")
     @ApiResponse(responseCode = "409", description = "Usuário já cadastrado")

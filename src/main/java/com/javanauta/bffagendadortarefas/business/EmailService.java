@@ -1,16 +1,11 @@
 package com.javanauta.bffagendadortarefas.business;
 
 
-import com.javanauta.bffagendadortarefas.business.dto.in.TarefaDTORequest;
+
 import com.javanauta.bffagendadortarefas.business.dto.out.TarefaDTOResponse;
-import com.javanauta.bffagendadortarefas.business.enums.StatusNotificacaoEnum;
 import com.javanauta.bffagendadortarefas.infrastructure.client.EmailClient;
-import com.javanauta.bffagendadortarefas.infrastructure.client.TarefaClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

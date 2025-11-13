@@ -16,7 +16,7 @@ services:
     ports:
       - "8083:8083"
     environment:
-      - USUARIO_URL:usuario:8080/usuario
+      - USUARIO_URL=usuario:8080/usuario
       - AGENDADOR_TAREFAS_URL=agendador-tarefas:8081/tarefas
       - NOTIFICACAO_URL=notificacao:8082/email
   usuario:

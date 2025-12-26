@@ -45,7 +45,6 @@ public class UsuarioController {
     @ApiResponse(responseCode = "401", description = "Credenciais inválidas")
     @ApiResponse(responseCode = "500", description = "Erro de servidor")
     public String login(@RequestBody LoginRequestDTO usuarioDTO) {
-
         return usuarioService.loginUsuario(usuarioDTO);
     }
 
